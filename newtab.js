@@ -650,6 +650,22 @@
     });
 
     wire();
+
+    // Deep links: newtab.html?tab=quiz&bg=3 (handy for links & store screenshots)
+    try {
+      const params = new URLSearchParams(location.search);
+      const tabParam = params.get("tab");
+      if (["cards", "quiz", "kana"].indexOf(tabParam) !== -1) {
+        const t = document.querySelector(`.tab[data-tab="${tabParam}"]`);
+        if (t) t.click();
+      }
+      const bgParam = params.get("bg");
+      if (bgParam !== null && /^[0-3]$/.test(bgParam)) {
+        state.settings.bg = Number(bgParam);
+        saveSettings(); applyBackground();
+      }
+    } catch (e) { /* preview without URL params */ }
+
     tick(); setInterval(tick, 1000);
     applyBackground(); applyMascot(); initParticles();
     renderMission(); renderJourney(); deckOptions(); loadDeck();
