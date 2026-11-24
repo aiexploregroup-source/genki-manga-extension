@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=340, initial-scale=1">
+  <title>Genki Manga — Study</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=RocknRoll+One&display=swap" rel="stylesheet">
+
+  <!-- Load order: data → styles → logic. MV3 CSP: no inline scripts. -->
+  <script src="data/genki.js"></script>
+  <link rel="stylesheet" href="popup.css">
+  <script src="popup.js" defer></script>
+</head>
+<body>
+  <div class="halftone" aria-hidden="true"></div>
+
+  <main class="popup">
+    <!-- ================= HEADER ================= -->
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo" lang="ja">げんき</span>
+        <div class="brand-text">
+          <h1>GENKI MANGA</h1>
+          <p class="tagline">Japanese Study New Tab</p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat stat-fire" title="Study streak">
+          <span class="stat-icon" aria-hidden="true">🔥</span><span id="streakNum">0</span>
+        </div>
+        <div class="stat stat-xp" title="Experience points">
+          <span class="stat-icon" aria-hidden="true">⚡</span><span id="xpNum">0</span><small>XP</small>
+        </div>
+      </div>
+    </header>
+
+    <!-- ================= TODAY'S MISSION ================= -->
+    <section class="panel mission" aria-labelledby="missionLabel">
+      <div class="panel-head">
+        <h2 id="missionLabel">TODAY'S MISSION</h2>
+        <span class="day-chip">DAY <span id="dayNum">1</span></span>
+      </div>
+
+      <div class="mission-body">
+        <div class="mascot" id="dayEmoji" lang="ja" aria-hidden="true">🌸</div>
+        <div class="mission-copy">
+          <h3 id="dayTitle">Loading…</h3>
+          <p class="jp" id="dayJp" lang="ja">&nbsp;</p>
+          <span class="stage-badge" id="dayStage">N5</span>
+        </div>
+      </div>
+
+      <div class="progress-area">
+        <div class="progress-labels">
+          <span>30-DAY CHALLENGE</span>
+          <span id="progressText">0 / 30</span>
+        </div>
+        <div class="progress-track" id="progressTrack" role="progressbar"
+             aria-label="Days completed" aria-valuemin="0" aria-valuemax="30" aria-valuenow="0">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ACTIONS ================= -->
+    <div class="actions">
+      <button id="openStudyBtn" class="btn btn-primary" type="button">🚀 Open Study Tab</button>
+      <button id="sourceBtn" class="btn btn-secondary" type="button">📖 Genki Source</button>
+    </div>
+
+    <!-- ================= REMINDER ================= -->
+    <section class="panel reminder" aria-labelledby="reminderLabel">
+      <h2 id="reminderLabel">🔔 DAILY REMINDER</h2>
+      <div class="reminder-row">
+        <label class="switch">
+          <input type="checkbox" id="reminderToggle" checked>
+          <span class="switch-ui" aria-hidden="true"></span>
+          <span class="switch-label">Daily reminder</span>
+        </label>
+        <input type="time" id="reminderTime" value="09:00" aria-label="Reminder time">
+        <button id="testBtn" class="btn btn-mini" type="button">Test 🔔</button>
+      </div>
+      <p class="status" id="reminderStatus" role="status">Next reminder: —</p>
+    </section>
+
+    <!-- ================= MINI QUIZ ================= -->
+    <section class="panel quiz" aria-labelledby="quizLabel">
+      <h2 id="quizLabel">✏️ MINI QUIZ <span class="xp-tag">+2 XP</span></h2>
+      <p class="quiz-prompt" id="quizPrompt">Loading quiz…</p>
+      <div class="quiz-choices" id="quizChoices" role="group" aria-label="Answer choices"></div>
+      <p class="quiz-feedback" id="quizFeedback" role="status" aria-live="polite"></p>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer class="footer">
+      <span class="rank"><span class="rank-star" aria-hidden="true">★</span> <span id="rankName">Gakusei</span></span>
+      <span>Made for げんき I</span>
+    </footer>
+  </main>
+</body>
+</html>

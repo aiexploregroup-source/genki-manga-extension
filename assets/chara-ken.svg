@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360">
+<defs>
+<linearGradient id="fur" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffc061"/><stop offset="0.5" stop-color="#f4912c"/><stop offset="1" stop-color="#d4661a"/>
+</linearGradient>
+<linearGradient id="furShade" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#e6812a"/><stop offset="1" stop-color="#b14e13"/>
+</linearGradient>
+<linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff0e2"/><stop offset="1" stop-color="#f6c9ab"/>
+</linearGradient>
+<linearGradient id="iris" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffe27a"/><stop offset="0.5" stop-color="#f0a01f"/><stop offset="1" stop-color="#9c4a10"/>
+</linearGradient>
+<linearGradient id="hoodie" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#6aa0e0"/><stop offset="0.55" stop-color="#4076bd"/><stop offset="1" stop-color="#2b4f8c"/>
+</linearGradient>
+<linearGradient id="hoodieDark" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#3565a8"/><stop offset="1" stop-color="#223f72"/>
+</linearGradient>
+</defs>
+
+<g stroke="#241a24" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+
+<!-- fox tail behind body -->
+<path d="M212 320 C 268 316 296 272 278 224 C 292 262 268 312 216 326 Z" fill="url(#furShade)"/>
+<path d="M236 300 C 276 288 288 250 276 226 C 290 268 266 312 232 320 Z" fill="url(#fur)"/>
+<path d="M270 226 C 288 244 292 268 282 288 C 300 268 294 236 274 220 Z" fill="#fff3e0"/>
+<!-- ear tuft tail highlight -->
+
+<!-- hair back -->
+<path d="M150 40 C 80 40 48 94 50 166 C 51 210 62 252 90 274 C 106 286 122 288 150 288 C 178 288 194 286 210 274 C 238 252 249 210 250 166 C 252 94 220 40 150 40 Z" fill="url(#furShade)"/>
+
+<!-- fox ears -->
+<path d="M74 96 L48 18 L126 72 Z" fill="url(#fur)"/>
+<path d="M226 96 L252 18 L174 72 Z" fill="url(#fur)"/>
+<path d="M80 84 L62 38 L112 72 Z" fill="#ffe0b0" stroke-width="3"/>
+<path d="M220 84 L238 38 L188 72 Z" fill="#ffe0b0" stroke-width="3"/>
+
+<!-- face -->
+<ellipse cx="150" cy="158" rx="84" ry="90" fill="url(#skin)"/>
+
+<!-- spiky bangs -->
+<path d="M68 144 C 62 84 102 50 150 50 C 198 50 238 84 232 144 C 216 116 200 104 188 102 L172 128 L162 96 L150 124 L138 96 L126 128 L110 102 C 96 106 80 118 68 144 Z" fill="url(#fur)"/>
+<path d="M74 134 C 80 98 100 74 126 62 C 110 84 102 110 100 134 Z" fill="#ffd98a" stroke="none" opacity="0.6"/>
+
+<!-- eyes -->
+<ellipse cx="113" cy="170" rx="26" ry="31" fill="#ffffff"/>
+<ellipse cx="187" cy="170" rx="26" ry="31" fill="#ffffff"/>
+<ellipse cx="115" cy="173" rx="19" ry="25" fill="url(#iris)" stroke-width="3"/>
+<ellipse cx="185" cy="173" rx="19" ry="25" fill="url(#iris)" stroke-width="3"/>
+<ellipse cx="115" cy="175" rx="8" ry="15" fill="#2a1410" stroke="none"/>
+<ellipse cx="185" cy="175" rx="8" ry="15" fill="#2a1410" stroke="none"/>
+<circle cx="108" cy="163" r="7.5" fill="#ffffff" stroke="none"/>
+<circle cx="178" cy="163" r="7.5" fill="#ffffff" stroke="none"/>
+<circle cx="122" cy="184" r="3.5" fill="#ffffff" stroke="none" opacity="0.85"/>
+<circle cx="192" cy="184" r="3.5" fill="#ffffff" stroke="none" opacity="0.85"/>
+<!-- confident slanted brows -->
+<path d="M86 142 Q112 128 138 146" fill="none" stroke-width="6"/>
+<path d="M162 146 Q188 128 214 142" fill="none" stroke-width="6"/>
+
+<!-- cheek marks -->
+<path d="M82 198 l14 -5 M90 206 l14 -5 M218 198 l-14 -5 M210 206 l-14 -5" fill="none" stroke="#e07a2a" stroke-width="3" opacity="0.8"/>
+
+<!-- confident grin -->
+<path d="M128 208 Q150 236 174 206 Q152 222 128 208 Z" fill="#ffffff"/>
+<path d="M128 208 Q150 236 174 206 Q150 214 128 208 Z" fill="#7a2f3e" stroke="none"/>
+<path d="M140 214 Q150 220 160 214" fill="#ff8fa0" stroke="none"/>
+
+<!-- body: blue hoodie -->
+<path d="M102 244 Q150 230 198 244 L204 306 L96 306 Z" fill="url(#hoodie)"/>
+<!-- hood behind neck -->
+<path d="M104 244 Q150 222 196 244 Q186 262 150 264 Q114 262 104 244 Z" fill="url(#hoodieDark)"/>
+<path d="M118 252 Q150 268 182 252" fill="none" stroke="#9ec4ec" stroke-width="3"/>
+<!-- drawstrings -->
+<path d="M138 256 L136 286 M162 256 L164 286" fill="none" stroke="#eaf2ff" stroke-width="3.5"/>
+<circle cx="136" cy="288" r="4" fill="#d7e6ff" stroke-width="2"/>
+<circle cx="164" cy="288" r="4" fill="#d7e6ff" stroke-width="2"/>
+<!-- pocket -->
+<path d="M118 282 L182 282 L178 302 L122 302 Z" fill="url(#hoodieDark)"/>
+<path d="M118 282 L182 282" fill="none" stroke="#9ec4ec" stroke-width="3"/>
+<!-- legs / pants -->
+<path d="M100 304 L200 304 L196 340 L154 340 L150 328 L146 340 L104 340 Z" fill="#2d3f5e"/>
+<ellipse cx="124" cy="346" rx="18" ry="9" fill="#d9d2c4"/>
+<ellipse cx="176" cy="346" rx="18" ry="9" fill="#d9d2c4"/>
+<!-- left arm -->
+<path d="M104 250 C 82 258 74 284 80 306 L98 304 C 96 288 104 272 114 264 Z" fill="url(#hoodie)"/>
+<circle cx="88" cy="308" r="13" fill="url(#skin)"/>
+<!-- right fist raised, confident -->
+<path d="M196 248 C 220 252 236 232 240 210 L224 204 C 218 222 206 234 190 236 Z" fill="url(#hoodie)"/>
+<circle cx="232" cy="200" r="15" fill="url(#skin)"/>
+<path d="M224 192 q3 -8 8 -2 M234 190 q6 -6 9 2" fill="none" stroke-width="4"/>
+
+</g>
+<g fill="#ffe9a8" opacity="0.9">
+<path d="M64 116 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z"/>
+<path d="M248 256 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2 Z"/>
+</g>
+</svg>

@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>げんき · Genki Manga New Tab</title>
+  <link rel="icon" href="assets/icon48.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&family=RocknRoll+One&family=Bangers&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="newtab.css">
+</head>
+<body>
+  <!-- ============ ANIME BACKGROUND LAYERS ============ -->
+  <div id="bg" class="bg" aria-hidden="true">
+    <div id="bgScene" class="bg-scene"></div>
+    <div class="bg-scrim"></div>
+    <div class="bg-halftone"></div>
+    <div class="bg-speed"></div>
+  </div>
+  <canvas id="petals" class="petals" aria-hidden="true"></canvas>
+  <div id="burst" class="burst-layer" aria-hidden="true"></div>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-badge">げんき<span class="brand-spark">✦</span></div>
+      <div class="brand-text">
+        <strong>GENKI MANGA</strong>
+        <small>30-DAY JAPANESE QUEST</small>
+      </div>
+    </div>
+
+    <div class="topbar-clock">
+      <div class="greeting" id="greeting">こんにちは！</div>
+      <div class="clock-row"><span id="clock">00:00</span><span id="seconds">00</span></div>
+      <div class="date" id="date">Monday, January 1</div>
+    </div>
+
+    <div class="topbar-actions">
+      <form id="searchForm" class="search" autocomplete="off">
+        <span class="search-icon">🔍</span>
+        <input id="searchInput" type="search" placeholder="Google…  (try j: 友達 for Jisho)" aria-label="Search the web">
+        <button type="submit" class="search-go" aria-label="Search">▶</button>
+      </form>
+      <button id="sourceBtn" class="btn btn-pink top-btn" title="Open the Genki I source challenge">📖 Source</button>
+      <button id="settingsBtn" class="btn btn-ink top-btn" title="Settings">⚙</button>
+    </div>
+  </header>
+
+  <!-- ============ MAIN 3-COLUMN MANGA LAYOUT ============ -->
+  <main class="layout">
+    <!-- ---------- LEFT COLUMN ---------- -->
+    <section class="col col-left">
+      <article class="panel mission-panel">
+        <div class="panel-ribbon">TODAY'S MISSION <span class="ribbon-star">★</span></div>
+        <div class="mission-head">
+          <div id="missionEmoji" class="mission-emoji">✏️</div>
+          <div class="mission-titles">
+            <div class="mission-dayline">DAY <span id="missionDay">01</span> <span id="stageBadge" class="stage-badge">INTRO</span></div>
+            <h2 id="missionTitle">Writing System &amp; Sounds</h2>
+            <p id="missionJp" class="mission-jp">もじ と おと</p>
+          </div>
+        </div>
+        <div class="task-list" id="taskList">
+          <label class="task"><input type="checkbox" data-task="0"><span class="task-box"></span><span class="task-label">👀 Look at every page</span></label>
+          <label class="task"><input type="checkbox" data-task="1"><span class="task-box"></span><span class="task-label">🗣 Say every item out loud</span></label>
+          <label class="task"><input type="checkbox" data-task="2"><span class="task-box"></span><span class="task-label">✍ Write key words 3×</span></label>
+          <label class="task"><input type="checkbox" data-task="3"><span class="task-box"></span><span class="task-label">🧠 Clear the Boss Quiz</span></label>
+        </div>
+        <div class="mission-foot">
+          <div class="mini-progress"><div id="taskFill" class="mini-progress-fill"></div></div>
+          <span id="taskCount" class="task-count">0 / 4</span>
+        </div>
+        <button id="stampBtn" class="btn btn-yellow stamp-btn" disabled>🏁 STAMP THIS STAGE!</button>
+        <p class="mission-hint" id="missionHint">Finish all 4 tasks to earn your stamp ✨</p>
+      </article>
+
+      <article class="panel journey-panel">
+        <div class="panel-ribbon ribbon-cyan">YOUR JOURNEY <span class="ribbon-star">⚡</span></div>
+        <div class="stats-row">
+          <div class="stat"><span class="stat-ico">🔥</span><strong id="streakVal">0</strong><small>STREAK</small></div>
+          <div class="stat"><span class="stat-ico">⭐</span><strong id="xpVal">0</strong><small>XP</small></div>
+          <div class="stat"><span class="stat-ico">🏁</span><strong id="clearedVal">0<span class="of">/30</span></strong><small>DAYS</small></div>
+        </div>
+        <div class="rank-line"><span id="rankEmoji">🐣</span> <strong id="rankName">Rookie Gakusei</strong> <span id="rankNext" class="rank-next"></span></div>
+        <div class="xp-bar"><div id="xpFill" class="xp-fill"></div></div>
+        <div class="map-head"><span>THE 30-DAY MAP</span><button id="expandMapBtn" class="link-btn">expand ↗</button></div>
+        <div id="miniMap" class="mini-map" role="grid" aria-label="30 day challenge map"></div>
+      </article>
+    </section>
+
+    <!-- ---------- CENTER COLUMN ---------- -->
+    <section class="col col-center">
+      <article class="panel hero-panel">
+        <div class="hero-sfx sfx-one">キラッ! ✦</div>
+        <div class="hero-sfx sfx-two">ドーン!</div>
+        <div class="speed-burst" aria-hidden="true"></div>
+        <div class="hero-mascot-wrap">
+          <button id="mascotBtn" class="mascot-btn" title="Tap your study buddy!">
+            <img id="mascot" src="assets/chara-hana.svg" alt="Your cute study buddy">
+            <span class="mascot-shadow"></span>
+          </button>
+        </div>
+        <div class="hero-copy">
+          <div class="bubble" id="quoteBubble">
+            <p id="quoteJp" class="quote-jp">今日もがんばろう！</p>
+            <p id="quoteEn" class="quote-en">Let's do our best today!</p>
+          </div>
+          <div class="word-card">
+            <div class="word-card-head">📌 WORD OF THE DAY <button id="speakWordBtn" class="speak-btn" title="Hear it">🔊</button></div>
+            <div class="word-main"><span id="wordJp">ともだち</span><span id="wordRomaji" class="word-romaji">tomodachi</span></div>
+            <div id="wordEn" class="word-en">friend</div>
+            <div id="wordExample" class="word-example"></div>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel study-panel">
+        <div class="tabs" role="tablist">
+          <button class="tab active" data-tab="cards" role="tab">📇 FLASHCARDS</button>
+          <button class="tab" data-tab="quiz" role="tab">🧠 BOSS QUIZ</button>
+          <button class="tab" data-tab="kana" role="tab">🔤 KANA CHART</button>
+        </div>
+
+        <!-- Flashcards -->
+        <div class="tab-content active" id="tab-cards">
+          <div class="deck-bar">
+            <span class="deck-label">DECK</span>
+            <select id="deckSelect" aria-label="Flashcard deck"></select>
+            <span id="cardCounter" class="card-counter">1 / 6</span>
+          </div>
+          <div class="flashcard" id="flashcard" tabindex="0" role="button" aria-label="Flip flashcard">
+            <div class="flashcard-inner">
+              <div class="flash-face flash-front">
+                <span class="face-tag">TAP TO FLIP ✦</span>
+                <div id="cardFront" class="card-jp">ともだち</div>
+                <span class="face-hint">かんじ → 意味</span>
+              </div>
+              <div class="flash-face flash-back">
+                <span class="face-tag">MEANING</span>
+                <div id="cardBack" class="card-en">friend</div>
+                <div id="cardRomaji" class="card-romaji">tomodachi</div>
+                <div id="cardExample" class="card-example"></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-controls">
+            <button id="cardPrev" class="btn btn-ink">◀ Prev</button>
+            <button id="cardGot" class="btn btn-green">✅ Got it! +2 XP</button>
+            <button id="cardNext" class="btn btn-ink">Next ▶</button>
+          </div>
+        </div>
+
+        <!-- Quiz -->
+        <div class="tab-content" id="tab-quiz">
+          <div id="quizIntro" class="quiz-intro">
+            <div class="quiz-badge">🧠</div>
+            <h3>BOSS QUIZ</h3>
+            <p>10 rapid-fire questions from your current day. Score 6+ to clear it and tick your mission!</p>
+            <button id="quizStart" class="btn btn-pink big-btn">⚔️ START QUIZ</button>
+          </div>
+          <div id="quizGame" class="quiz-game hidden">
+            <div class="quiz-top"><span id="quizQnum">QUESTION 1 / 10</span><span id="quizScore">⭐ 0</span></div>
+            <div class="quiz-progress"><div id="quizFill" class="quiz-fill"></div></div>
+            <div id="quizQuestion" class="quiz-question">Question text</div>
+            <div id="quizChoices" class="quiz-choices"></div>
+            <div id="quizFeedback" class="quiz-feedback">&nbsp;</div>
+          </div>
+          <div id="quizResult" class="quiz-result hidden">
+            <div id="resultEmoji" class="result-emoji">🎉</div>
+            <h3 id="resultTitle">STAGE CLEAR!</h3>
+            <p id="resultText"></p>
+            <button id="quizAgain" class="btn btn-pink">🔁 PLAY AGAIN</button>
+          </div>
+        </div>
+
+        <!-- Kana chart -->
+        <div class="tab-content" id="tab-kana">
+          <div class="kana-controls">
+            <div class="segmented">
+              <button class="seg active" data-kana="HIRAGANA">あ ひらがな</button>
+              <button class="seg" data-kana="KATAKANA">ア カタカナ</button>
+            </div>
+            <span class="kana-hint">click a character to hear it 🔊</span>
+          </div>
+          <div id="kanaChart" class="kana-chart"></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ---------- RIGHT COLUMN ---------- -->
+    <section class="col col-right">
+      <article class="panel reminder-panel">
+        <div class="panel-ribbon ribbon-yellow">DAILY REMINDER <span class="ribbon-star">⏰</span></div>
+        <div class="reminder-row">
+          <label class="switch"><input type="checkbox" id="reminderToggle"><span class="switch-track"></span></label>
+          <div><strong id="reminderStatus">Reminder ON</strong><small id="reminderNext">Every day at 09:00</small></div>
+        </div>
+        <div class="reminder-time-row">
+          <label for="reminderTime">⏱ Study time</label>
+          <input type="time" id="reminderTime" value="09:00">
+        </div>
+        <button id="testNotifyBtn" class="btn btn-cyan full-btn">🔔 Send test reminder</button>
+        <p class="panel-note">A friendly notification pops up every day — even while you browse other tabs. Keep your streak alive! 🔥</p>
+      </article>
+
+      <article class="panel customize-panel">
+        <div class="panel-ribbon ribbon-purple">MAKE IT YOURS <span class="ribbon-star">✦</span></div>
+        <div class="sub-label">ANIME SCENE</div>
+        <div id="bgPicker" class="bg-picker">
+          <button class="bg-thumb active" data-bg="0" style="background-image:url('assets/bg-sakura.svg')" title="Sakura Street"><span>桜 Sakura</span></button>
+          <button class="bg-thumb" data-bg="1" style="background-image:url('assets/bg-sunset.svg')" title="Sunset City"><span>夕 Sunset</span></button>
+          <button class="bg-thumb" data-bg="2" style="background-image:url('assets/bg-shrine.svg')" title="Torii Shrine"><span>神社 Shrine</span></button>
+          <button class="bg-thumb" data-bg="3" style="background-image:url('assets/bg-neon.svg')" title="Neon Tokyo"><span>霓 Neon</span></button>
+        </div>
+        <div class="sub-label">STUDY BUDDY</div>
+        <div id="charPicker" class="char-picker">
+          <button class="char-thumb active" data-char="0" title="Hana"><img src="assets/chara-hana.svg" alt="Hana"></button>
+          <button class="char-thumb" data-char="1" title="Ken"><img src="assets/chara-ken.svg" alt="Ken"></button>
+          <button class="char-thumb" data-char="2" title="Mochi"><img src="assets/chara-mochi.svg" alt="Mochi"></button>
+        </div>
+      </article>
+
+      <article class="panel links-panel">
+        <div class="panel-ribbon ribbon-green">QUICK LINKS <span class="ribbon-star">↗</span></div>
+        <button id="openDayBtn" class="link-item"><span>📅</span><span><strong>Open today's lesson</strong><small>full Genki I pages</small></span><b>›</b></button>
+        <button id="mapFullBtn" class="link-item"><span>🗺️</span><span><strong>30-day quest map</strong><small>every stage &amp; reward</small></span><b>›</b></button>
+        <button id="genkiSourceBtn" class="link-item"><span>📖</span><span><strong>Genki source challenge</strong><small>arena.site study book</small></span><b>›</b></button>
+      </article>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>げんき GENKI I · 30-DAY MANGA CHALLENGE</span>
+    <span id="footerTip">💡 Tip: click your study buddy for a pep talk!</span>
+  </footer>
+
+  <!-- ============ DAY DETAIL MODAL ============ -->
+  <div id="dayModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Day details">
+    <div class="modal-backdrop" data-close="dayModal"></div>
+    <div class="modal-card">
+      <button class="modal-x" data-close="dayModal" aria-label="Close">✕</button>
+      <div class="modal-head">
+        <span id="modalEmoji" class="modal-emoji">✏️</span>
+        <div><div class="modal-day">DAY <span id="modalDay">01</span> · <span id="modalStage">INTRO</span></div><h2 id="modalTitle">Writing System &amp; Sounds</h2><p id="modalJp">もじ と おと</p></div>
+      </div>
+      <div class="modal-body">
+        <h3 class="modal-h3">📚 VOCABULARY</h3>
+        <div id="modalVocab" class="vocab-list"></div>
+        <h3 class="modal-h3">🧩 GRAMMAR POINTS</h3>
+        <div id="modalGrammar" class="grammar-list"></div>
+      </div>
+      <div class="modal-foot">
+        <button id="modalQuizBtn" class="btn btn-pink">🧠 Quiz this day</button>
+        <button id="modalSourceBtn" class="btn btn-ink">📖 Open full page</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ FULL MAP MODAL ============ -->
+  <div id="mapModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Full 30 day map">
+    <div class="modal-backdrop" data-close="mapModal"></div>
+    <div class="modal-card map-modal-card">
+      <button class="modal-x" data-close="mapModal" aria-label="Close">✕</button>
+      <div class="modal-head"><span class="modal-emoji">🗺️</span><div><div class="modal-day">QUEST MAP</div><h2>30 Days to Genki Glory</h2><p>Click any day to see its lesson plan</p></div></div>
+      <div id="fullMap" class="full-map"></div>
+    </div>
+  </div>
+
+  <!-- ============ SETTINGS MODAL ============ -->
+  <div id="settingsModal" class="modal hidden" role="dialog" aria-modal="true" aria-label="Settings">
+    <div class="modal-backdrop" data-close="settingsModal"></div>
+    <div class="modal-card small-modal">
+      <button class="modal-x" data-close="settingsModal" aria-label="Close">✕</button>
+      <div class="modal-head"><span class="modal-emoji">⚙️</span><div><div class="modal-day">SETTINGS</div><h2>Make it yours</h2></div></div>
+      <label class="field-label" for="nameInput">Your name (sensei calls you this)</label>
+      <input id="nameInput" class="field-input" type="text" maxlength="16" placeholder="Gakusei">
+      <label class="field-label" for="settingsTime">Daily reminder time</label>
+      <input id="settingsTime" class="field-input" type="time">
+      <div class="danger-zone"><button id="resetBtn" class="btn btn-danger">↺ Reset all progress</button></div>
+      <p class="panel-note">Progress is saved in this browser. The Genki I source challenge is at <a id="settingsSource" href="#" target="_blank">arena.site</a>.</p>
+    </div>
+  </div>
+
+  <div id="toast" class="toast hidden" role="status"></div>
+
+  <script src="data/genki.js"></script>
+  <script src="newtab.js"></script>
+</body>
+</html>

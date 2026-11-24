@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360">
+<defs>
+<radialGradient id="body" cx="42%" cy="32%" r="72%">
+<stop offset="0" stop-color="#ffffff"/><stop offset="0.6" stop-color="#fff2f6"/><stop offset="1" stop-color="#ffd9e6"/>
+</radialGradient>
+<linearGradient id="bodyShade" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffe3ec"/><stop offset="1" stop-color="#f4bdd1"/>
+</linearGradient>
+<linearGradient id="iris" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#9ad9ff"/><stop offset="0.5" stop-color="#5aa8e6"/><stop offset="1" stop-color="#3d5fa8"/>
+</linearGradient>
+<linearGradient id="book" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ff9ec4"/><stop offset="1" stop-color="#e2609a"/>
+</linearGradient>
+</defs>
+
+<g stroke="#3a2233" stroke-width="5" stroke-linejoin="round" stroke-linecap="round">
+
+<!-- tiny ears -->
+<ellipse cx="96" cy="112" rx="20" ry="28" transform="rotate(-22 96 112)" fill="url(#body)"/>
+<ellipse cx="204" cy="112" rx="20" ry="28" transform="rotate(22 204 112)" fill="url(#body)"/>
+
+<!-- round mochi body -->
+<ellipse cx="150" cy="198" rx="102" ry="106" fill="url(#body)"/>
+<!-- bottom shading for dimension -->
+<path d="M60 232 Q150 312 240 232 Q230 296 150 302 Q70 296 60 232 Z" fill="url(#bodyShade)" stroke="none" opacity="0.55"/>
+<!-- top shine -->
+<ellipse cx="112" cy="126" rx="40" ry="22" fill="#ffffff" stroke="none" opacity="0.75" transform="rotate(-18 112 126)"/>
+
+<!-- star mark on forehead -->
+<path d="M150 118 l9 19 21 3 -15 15 4 21 -19 -10 -19 10 4 -21 -15 -15 21 -3 Z" fill="#ffd23f" stroke-width="4"/>
+
+<!-- huge sparkling eyes -->
+<ellipse cx="112" cy="196" rx="30" ry="36" fill="#ffffff"/>
+<ellipse cx="188" cy="196" rx="30" ry="36" fill="#ffffff"/>
+<ellipse cx="114" cy="200" rx="23" ry="29" fill="url(#iris)" stroke-width="3"/>
+<ellipse cx="186" cy="200" rx="23" ry="29" fill="url(#iris)" stroke-width="3"/>
+<ellipse cx="114" cy="203" rx="11" ry="17" fill="#241634" stroke="none"/>
+<ellipse cx="186" cy="203" rx="11" ry="17" fill="#241634" stroke="none"/>
+<circle cx="105" cy="188" r="9" fill="#ffffff" stroke="none"/>
+<circle cx="177" cy="188" r="9" fill="#ffffff" stroke="none"/>
+<circle cx="123" cy="212" r="5" fill="#ffffff" stroke="none" opacity="0.85"/>
+<circle cx="195" cy="212" r="5" fill="#ffffff" stroke="none" opacity="0.85"/>
+<circle cx="105" cy="212" r="3" fill="#bfe6ff" stroke="none"/>
+<circle cx="177" cy="212" r="3" fill="#bfe6ff" stroke="none"/>
+
+<!-- tiny blush -->
+<ellipse cx="86" cy="226" rx="14" ry="7" fill="#ff9ab8" stroke="none" opacity="0.8"/>
+<ellipse cx="214" cy="226" rx="14" ry="7" fill="#ff9ab8" stroke="none" opacity="0.8"/>
+
+<!-- nose + tiny mouth -->
+<circle cx="150" cy="220" r="2.5" fill="#d98a9e" stroke="none"/>
+<path d="M140 232 Q150 244 160 232" fill="none" stroke-width="4"/>
+<path d="M145 238 Q150 243 155 238" fill="#ff8fae" stroke="none"/>
+
+<!-- little feet -->
+<ellipse cx="118" cy="300" rx="18" ry="11" fill="url(#bodyShade)"/>
+<ellipse cx="182" cy="300" rx="18" ry="11" fill="url(#bodyShade)"/>
+
+<!-- tiny hands holding book -->
+<circle cx="92" cy="268" r="15" fill="url(#body)"/>
+<circle cx="208" cy="268" r="15" fill="url(#body)"/>
+
+<!-- small Japanese book -->
+<g transform="rotate(-4 150 282)">
+<rect x="118" y="262" width="64" height="44" rx="5" fill="url(#book)"/>
+<rect x="123" y="267" width="54" height="34" rx="3" fill="#fff6ef" stroke-width="3"/>
+<path d="M150 267 L150 301" fill="none" stroke="#d8c2b4" stroke-width="2.5"/>
+<g stroke="#d9c5b8" stroke-width="2">
+<path d="M130 276 l14 0 M130 283 l14 0 M130 290 l12 0"/>
+<path d="M156 276 l14 0 M156 283 l14 0 M156 290 l12 0"/>
+</g>
+<path d="M134 295 l8 0" stroke="#e2609a" stroke-width="3"/>
+</g>
+
+</g>
+<g fill="#ffffff" opacity="0.9">
+<path d="M56 158 l3 8 8 3 -8 3 -3 8 -3 -8 -8 -3 8 -3 Z"/>
+<path d="M246 210 l2 6 6 2 -6 2 -2 6 -2 -6 -6 -2 6 -2 Z"/>
+</g>
+</svg>

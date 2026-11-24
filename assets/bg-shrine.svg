@@ -1,0 +1,191 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+<defs>
+<linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#ffd98a"/>
+<stop offset="0.45" stop-color="#ffe9b8"/>
+<stop offset="1" stop-color="#fff4d8"/>
+</linearGradient>
+<radialGradient id="sunBurst" cx="50%" cy="50%" r="50%">
+<stop offset="0" stop-color="#fff8d8" stop-opacity="1"/>
+<stop offset="0.5" stop-color="#ffe49a" stop-opacity="0.6"/>
+<stop offset="1" stop-color="#ffe49a" stop-opacity="0"/>
+</radialGradient>
+<linearGradient id="forest" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#4e7a46"/>
+<stop offset="1" stop-color="#24421f"/>
+</linearGradient>
+<linearGradient id="forestFar" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#7fa070"/>
+<stop offset="1" stop-color="#4d6f45"/>
+</linearGradient>
+<linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#8cae6a"/>
+<stop offset="1" stop-color="#5a7a3f"/>
+</linearGradient>
+<linearGradient id="path" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#d9cba6"/>
+<stop offset="1" stop-color="#b6a37a"/>
+</linearGradient>
+<linearGradient id="torii" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#f0553f"/>
+<stop offset="1" stop-color="#c5362a"/>
+</linearGradient>
+<linearGradient id="toriiDark" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#c23a2c"/>
+<stop offset="1" stop-color="#8f271f"/>
+</linearGradient>
+<linearGradient id="ray" x1="0" y1="0" x2="0" y2="1">
+<stop offset="0" stop-color="#fff6cf" stop-opacity="0.65"/>
+<stop offset="1" stop-color="#fff6cf" stop-opacity="0"/>
+</linearGradient>
+<radialGradient id="leaf" cx="50%" cy="35%" r="65%">
+<stop offset="0" stop-color="#6f9c55"/>
+<stop offset="1" stop-color="#3c6330"/>
+</radialGradient>
+</defs>
+
+<rect width="1600" height="900" fill="url(#sky)"/>
+<circle cx="800" cy="250" r="420" fill="url(#sunBurst)"/>
+<circle cx="800" cy="250" r="95" fill="#fff6cf" opacity="0.85"/>
+
+<!-- distant hills / forest line -->
+<path d="M0 500 Q 250 410 500 480 T 1100 470 T 1600 490 L1600 700 L0 700 Z" fill="url(#forestFar)" opacity="0.8"/>
+
+<!-- light rays through trees -->
+<g fill="url(#ray)">
+<path d="M770 60 L900 60 L1040 780 L700 780 Z" opacity="0.55"/>
+<path d="M600 40 L680 40 L520 700 L360 700 Z" opacity="0.35"/>
+<path d="M960 50 L1040 50 L1240 720 L1080 720 Z" opacity="0.35"/>
+<path d="M430 80 L490 80 L260 640 L140 640 Z" opacity="0.25"/>
+<path d="M1150 70 L1210 70 L1460 660 L1330 660 Z" opacity="0.25"/>
+</g>
+
+<!-- ground -->
+<rect x="0" y="500" width="1600" height="400" fill="url(#ground)"/>
+
+<!-- stone path receding to shrine -->
+<path d="M770 470 L830 470 L1280 900 L320 900 Z" fill="url(#path)"/>
+<g fill="#9d8a63" opacity="0.4">
+<path d="M780 500 L820 500 L840 530 L760 530 Z"/>
+<path d="M772 545 L828 545 L858 585 L742 585 Z"/>
+<path d="M760 605 L840 605 L885 655 L715 655 Z"/>
+<path d="M745 675 L855 675 L920 735 L680 735 Z"/>
+<path d="M725 755 L875 755 L960 830 L640 830 Z"/>
+<path d="M700 845 L900 845 L1010 900 L590 900 Z"/>
+</g>
+
+<!-- stone lanterns -->
+<g fill="#9a9a8c" stroke="#5c5c52" stroke-width="3">
+<g transform="translate(300 640)">
+<rect x="-9" y="60" width="18" height="70" fill="#8a8a7c"/>
+<rect x="-22" y="50" width="44" height="12"/>
+<path d="M-26 48 L0 18 L26 48 Z" fill="#7d7d70"/>
+<rect x="-16" y="-6" width="32" height="26" fill="#c9b98f"/>
+<path d="M-24 -8 L0 -34 L24 -8 Z" fill="#7d7d70"/>
+<circle cx="0" cy="7" r="7" fill="#ffdf8c" stroke="none"/>
+</g>
+<g transform="translate(1300 640)">
+<rect x="-9" y="60" width="18" height="70" fill="#8a8a7c"/>
+<rect x="-22" y="50" width="44" height="12"/>
+<path d="M-26 48 L0 18 L26 48 Z" fill="#7d7d70"/>
+<rect x="-16" y="-6" width="32" height="26" fill="#c9b98f"/>
+<path d="M-24 -8 L0 -34 L24 -8 Z" fill="#7d7d70"/>
+<circle cx="0" cy="7" r="7" fill="#ffdf8c" stroke="none"/>
+</g>
+<g transform="translate(560 540) scale(0.62)">
+<rect x="-9" y="60" width="18" height="70" fill="#8a8a7c"/>
+<rect x="-22" y="50" width="44" height="12"/>
+<path d="M-26 48 L0 18 L26 48 Z" fill="#7d7d70"/>
+<rect x="-16" y="-6" width="32" height="26" fill="#c9b98f"/>
+<path d="M-24 -8 L0 -34 L24 -8 Z" fill="#7d7d70"/>
+<circle cx="0" cy="7" r="7" fill="#ffdf8c" stroke="none"/>
+</g>
+<g transform="translate(1040 540) scale(0.62)">
+<rect x="-9" y="60" width="18" height="70" fill="#8a8a7c"/>
+<rect x="-22" y="50" width="44" height="12"/>
+<path d="M-26 48 L0 18 L26 48 Z" fill="#7d7d70"/>
+<rect x="-16" y="-6" width="32" height="26" fill="#c9b98f"/>
+<path d="M-24 -8 L0 -34 L24 -8 Z" fill="#7d7d70"/>
+<circle cx="0" cy="7" r="7" fill="#ffdf8c" stroke="none"/>
+</g>
+</g>
+
+<!-- TORII GATES: far to near -->
+<g>
+<!-- gate 8 (tiny) -->
+<g opacity="0.9">
+<rect x="786" y="438" width="4" height="40" fill="url(#toriiDark)"/><rect x="810" y="438" width="4" height="40" fill="url(#toriiDark)"/>
+<path d="M780 438 Q800 432 820 438 L819 442 Q800 437 781 442 Z" fill="url(#torii)"/>
+<rect x="783" y="446" width="34" height="3" fill="url(#torii)"/>
+</g>
+<!-- gate 7 -->
+<g opacity="0.92">
+<rect x="772" y="430" width="5" height="70" fill="url(#toriiDark)"/><rect x="823" y="430" width="5" height="70" fill="url(#toriiDark)"/>
+<path d="M764 430 Q800 422 836 430 L834 436 Q800 428 766 436 Z" fill="url(#torii)"/>
+<rect x="768" y="440" width="64" height="5" fill="url(#torii)"/>
+</g>
+<!-- gate 6 -->
+<g opacity="0.95">
+<rect x="752" y="418" width="6" height="110" fill="url(#toriiDark)"/><rect x="842" y="418" width="6" height="110" fill="url(#toriiDark)"/>
+<path d="M742 418 Q800 408 858 418 L855 425 Q800 414 745 425 Z" fill="url(#torii)"/>
+<rect x="748" y="430" width="104" height="7" fill="url(#torii)"/>
+</g>
+<!-- gate 5 -->
+<g>
+<rect x="722" y="400" width="8" height="170" fill="url(#toriiDark)"/><rect x="870" y="400" width="8" height="170" fill="url(#toriiDark)"/>
+<path d="M708 400 Q800 388 892 400 L888 409 Q800 396 712 409 Z" fill="url(#torii)"/>
+<rect x="716" y="414" width="168" height="10" fill="url(#torii)"/>
+<rect x="790" y="404" width="20" height="18" fill="#a83227"/>
+</g>
+<!-- gate 4 -->
+<g>
+<rect x="680" y="372" width="10" height="270" fill="url(#toriiDark)"/><rect x="910" y="372" width="10" height="270" fill="url(#toriiDark)"/>
+<path d="M662 372 Q800 358 938 372 L933 384 Q800 368 667 384 Z" fill="url(#torii)"/>
+<rect x="672" y="390" width="256" height="13" fill="url(#torii)"/>
+<rect x="782" y="378" width="36" height="26" fill="#a83227"/>
+</g>
+<!-- gate 3 -->
+<g>
+<rect x="620" y="330" width="14" height="405" fill="url(#toriiDark)"/><rect x="966" y="330" width="14" height="405" fill="url(#toriiDark)"/>
+<path d="M596 330 Q800 312 1004 330 L997 346 Q800 326 603 346 Z" fill="url(#torii)"/>
+<rect x="610" y="354" width="380" height="18" fill="url(#torii)"/>
+<rect x="770" y="340" width="60" height="36" fill="#a83227"/>
+</g>
+<!-- gate 2 -->
+<g>
+<rect x="530" y="268" width="18" height="632" fill="url(#toriiDark)"/><rect x="1052" y="268" width="18" height="632" fill="url(#toriiDark)"/>
+<path d="M498 268 Q800 244 1102 268 L1092 290 Q800 262 508 290 Z" fill="url(#torii)"/>
+<rect x="516" y="300" width="568" height="24" fill="url(#torii)"/>
+<rect x="748" y="278" width="104" height="48" fill="#a83227"/>
+</g>
+<!-- gate 1 (front) -->
+<g>
+<rect x="370" y="170" width="26" height="730" fill="url(#toriiDark)"/><rect x="1204" y="170" width="26" height="730" fill="url(#toriiDark)"/>
+<path d="M324 170 Q800 132 1276 170 L1262 204 Q800 160 338 204 Z" fill="url(#torii)"/>
+<rect x="352" y="216" width="896" height="34" fill="url(#torii)"/>
+<rect x="700" y="180" width="200" height="70" fill="#a83227"/>
+<rect x="722" y="196" width="156" height="40" fill="#c84132" opacity="0.7"/>
+</g>
+</g>
+
+<!-- foreground trees framing -->
+<g>
+<path d="M0 900 L0 300 Q120 340 180 480 Q230 600 260 900 Z" fill="url(#forest)"/>
+<path d="M1600 900 L1600 280 Q1480 330 1420 470 Q1370 600 1340 900 Z" fill="url(#forest)"/>
+<g fill="url(#leaf)">
+<ellipse cx="90" cy="300" rx="150" ry="120"/><ellipse cx="220" cy="360" rx="130" ry="100"/>
+<ellipse cx="60" cy="450" rx="140" ry="100"/><ellipse cx="1510" cy="290" rx="150" ry="120"/>
+<ellipse cx="1380" cy="350" rx="130" ry="100"/><ellipse cx="1540" cy="450" rx="140" ry="100"/>
+</g>
+<g fill="#8fb56a" opacity="0.55">
+<circle cx="120" cy="280" r="16"/><circle cx="200" cy="340" r="12"/><circle cx="80" cy="420" r="14"/>
+<circle cx="1480" cy="280" r="16"/><circle cx="1400" cy="340" r="12"/><circle cx="1520" cy="420" r="14"/>
+</g>
+</g>
+
+<!-- floating pollen / light motes -->
+<g fill="#fff6cf" opacity="0.75">
+<circle cx="640" cy="300" r="4"/><circle cx="960" cy="260" r="3"/><circle cx="720" cy="420" r="3"/>
+<circle cx="880" cy="380" r="4"/><circle cx="560" cy="500" r="3"/><circle cx="1040" cy="470" r="3"/><circle cx="800" cy="520" r="3"/>
+</g>
+</svg>
