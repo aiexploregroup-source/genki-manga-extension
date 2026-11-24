@@ -13,7 +13,7 @@ Primary: **Education** · Secondary: **Productivity**
 English (Japanese learning content)
 
 ## Privacy policy URL
-https://aiexploregroup-source.github.io/genki-manga-extension/privacy.html
+https://github.com/aiexploregroup-source/genki-manga-extension/blob/main/docs/privacy.html
 
 ---
 
